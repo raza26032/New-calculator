@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleee.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="calculator">
+
+            <input id="calc" type="text" placeholder="">
+            
+            <div id="keyboard">
+                <button class="operator">C</button>
+                <button class="operator">CE</button>
+                <button class="operator">.</button>
+                <button class="operator">/</button>
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="operator">*</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="operator">-</button>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="operator">+</button>
+                <button class="empty"></button>
+                <button class="number">0</button>
+                <button class="empty"></button>
+                <button class="operator">=</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+var btns = document.getElementsByTagName("button");
+            var calc = document.getElementById("calc");
+
+            for (var thisBtn of btns) {
+                thisBtn.addEventListener('click', function() {
+                    if (this.innerHTML == "=")
+                        calc.value = eval(calc.value);
+                    else if (this.innerHTML == "C")
+                        calc.value = "";
+                        
+                    else if (this.innerHTML == "CE")
+                        calc.value = "";
+
+                    else
+                        calc.value += this.innerHTML;
+                })
+            }
+
+    </script>
+
+</body>
+</html>
